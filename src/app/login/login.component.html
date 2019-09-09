@@ -1,0 +1,19 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="login(checkoutForm.value)">
+
+    <div>
+      <label for="email">
+        Email
+      </label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+  
+    <div>
+      <label for="password">
+        password
+      </label>
+      <input id="password" type="text" formControlName="password">
+    </div>
+  
+    <button class="button" type="submit">loing</button>
+  
+  </form>
