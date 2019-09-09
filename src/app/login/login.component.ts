@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder } from '@angular/forms';
 
+import { AuthService } from '../services/auth/auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +14,7 @@ export class LoginComponent implements OnInit {
   checkoutForm
 
   constructor(
+    private authService: AuthService,
     private formBuilder: FormBuilder,
     ) { 
       this.checkoutForm = this.formBuilder.group({
@@ -21,7 +24,7 @@ export class LoginComponent implements OnInit {
     }
 
     login(customerData) {
-      console.warn('Your order has been submitted', customerData);
+      this.authService.login(customerData.email, customerData.password);
     }
 
   ngOnInit() {
