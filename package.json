@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port $PORT",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "preinstall": "npm install -g @angular/cli"
+    "postinstall": "ng build --prod",
+    "preinstall": "npm install -g @angular/cli",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
