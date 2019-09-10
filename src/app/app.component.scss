@@ -1,0 +1,13 @@
+.close{
+  width: 25px;
+  cursor: pointer;
+}
+
+.container{
+  display: flex; 
+  justify-content: space-between;
+  flex: 1;
+  max-width: 960px;
+  margin: auto;
+  align-items: center;
+}
