@@ -1,0 +1,53 @@
+.input-container{
+  // border: 1px dashed red;
+  padding: 8px;
+
+  label{
+    display: block;
+  }
+
+  input{
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #1976d2;
+  }
+}
+
+.login-form{
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 400px;
+
+  .form{
+    &-header{
+      background-color: #1976d2;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    &-body{
+      padding: 15px;
+    }
+  }
+
+  .button-container{
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    
+    .button{
+      background-color: #1976d2;
+      border: none;
+      padding: 8px 15px;
+      color: white;
+      text-transform: uppercase;
+      min-width: 128px;
+      cursor: pointer;
+    }
+  }
+
+}

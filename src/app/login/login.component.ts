@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 import { AuthService } from '../services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private router: Router,
     private formBuilder: FormBuilder,
     ) { 
       this.checkoutForm = this.formBuilder.group({
@@ -23,8 +25,12 @@ export class LoginComponent implements OnInit {
       });
     }
 
-    login(customerData) {
-      this.authService.login(customerData.email, customerData.password);
+    async login(customerData) {
+      if(await this.authService.login(customerData.email, customerData.password)){
+        this.router.navigate(['/products']);
+      }else {
+        // @TODO mostrar algun error
+      }
     }
 
   ngOnInit() {
