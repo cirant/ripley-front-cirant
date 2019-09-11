@@ -20,9 +20,13 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     ) { 
       this.checkoutForm = this.formBuilder.group({
-        email: 'cirant3002@gmail.com',
+        email: 'usuario@usuario.com',
         password: '12345678'
       });
+
+      if(sessionStorage.getItem('token')) {
+        this.router.navigate(['/products']);
+      }
     }
 
     async login(customerData) {
@@ -31,6 +35,11 @@ export class LoginComponent implements OnInit {
       }else {
         // @TODO mostrar algun error
       }
+    }
+
+    async loginGoogle() {
+      await this.authService.loginGoogle();
+      this.router.navigate(['/products']);
     }
 
   ngOnInit() {

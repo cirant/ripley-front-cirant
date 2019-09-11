@@ -4,25 +4,33 @@
     </div>
 
     <div class="form-body">
-      <div class="input-container">
-        <label for="email">
-          Email
-        </label>
-        <input id="email" type="text" formControlName="email">
-      </div>
-    
-      <div class="input-container">
-        <label for="password">
-          password
-        </label>
-        <input id="password" type="password" formControlName="password">
+
+      <div class="email-container">
+        <div class="input-container">
+          <label for="email">
+            Email
+          </label>
+          <input id="email" type="text" formControlName="email">
+        </div>
+      
+        <div class="input-container">
+          <label for="password">
+            password
+          </label>
+          <input id="password" type="password" formControlName="password">
+        </div>
+  
+        <div class="button-container">
+          <button class="button btn" type="submit">login</button>
+        </div>
       </div>
 
-      <div class="button-container">
-        <button class="button" type="submit">login</button>
+      <div class="goole-container">
+          <button (click)="loginGoogle()" class="btn btn-google" type="button">Log in with Google</button>
       </div>
 
     </div>
+
   
   
   </form>

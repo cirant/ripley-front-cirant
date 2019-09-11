@@ -4,6 +4,7 @@ import { ProductService } from '../services/product/product.service';
 interface Details {
   attributes: Array<any>;
   thumbnail: String;
+  price: Object
 }
 
 @Component({
@@ -55,9 +56,10 @@ export class ProductsComponent implements OnInit {
 
       this.details = {
         attributes: attributes,
-        thumbnail: res['data']['thumbnailImage']
+        thumbnail: res['data']['thumbnailImage'],
+        price: res['data']['prices']
       };
-
+      
       this.title = res['data']['shortDescription'];
     }, err => {
       this.loading = false;

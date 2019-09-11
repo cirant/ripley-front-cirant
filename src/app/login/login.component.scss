@@ -1,5 +1,6 @@
+@import '../../styles.scss';
+
 .input-container{
-  // border: 1px dashed red;
   padding: 8px;
 
   label{
@@ -9,8 +10,29 @@
   input{
     border: none;
     width: 100%;
-    border-bottom: 1px solid #1976d2;
+    border-bottom: 1px solid $primary-color;
   }
+}
+
+.btn{
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.btn-google{
+  background-color: #bb2f1f;
+  color: white;
+}
+
+.google-link{
+  color: #bb2f1f;
+  margin: 8px auto;
+  cursor: pointer;
+  display: table;
 }
 
 .login-form{
@@ -22,7 +44,7 @@
 
   .form{
     &-header{
-      background-color: #1976d2;
+      background-color: $primary-color;
       color: white;
       text-align: center;
       padding: 15px;
@@ -31,6 +53,13 @@
 
     &-body{
       padding: 15px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      // & > * {
+      //   flex: 1;
+      // }
     }
   }
 
@@ -40,7 +69,7 @@
     margin-top: 15px;
     
     .button{
-      background-color: #1976d2;
+      background-color: $second-color;
       border: none;
       padding: 8px 15px;
       color: white;
@@ -50,4 +79,8 @@
     }
   }
 
+}
+
+.toolbar{
+  background-color: #1a1a1a;
 }

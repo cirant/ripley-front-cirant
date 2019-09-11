@@ -11,3 +11,14 @@
   margin: auto;
   align-items: center;
 }
+
+.toolbar {
+  height: 70px;
+  margin: -8px;
+  display: flex;
+  align-items: center;
+  border-top: 15px solid #5b4178;  
+  background-color: #1a1a1a;
+  color: white;
+  font-weight: 600;
+}

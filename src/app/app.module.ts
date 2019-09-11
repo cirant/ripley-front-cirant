@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ProductsComponent } from './products/products.component';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 
 import { environment } from '../environments/environment';
 
@@ -16,7 +17,7 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     LoginComponent,
-    ProductsComponent
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,9 +26,9 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'ripley'),
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AngularFireAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,20 @@
 <div class="details-container" *ngIf="details && !loading">
   <div class="img-container">
     <img [src]="details.thumbnail" [alt]="details.thumbnail">
+    <div class="price-list">
+      <div class="price-container">
+        <div class="price-title">Normal: </div>
+        <div>{{details.price.formattedListPrice}}</div>
+      </div>
+      <div class="price-container">
+        <div class="price-title">Internet:</div>
+        <div>{{details.price.formattedOfferPrice}}</div>
+      </div>
+      <div class="price-container ccard">
+        <div class="price-title">Tarjeta Ripley:</div>
+        <div>{{details.price.formattedCardPrice}}</div>
+      </div>
+    </div>
   </div>
   <ul>
     <li class="details-row" *ngFor="let element of details.attributes">

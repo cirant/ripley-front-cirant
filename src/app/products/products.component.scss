@@ -78,3 +78,20 @@ img {
     }
   }
 }
+
+
+.price-container{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  font-weight: bold;
+
+  &.ccard{
+    color: #e75353;
+  }
+
+  .price-title{
+    width: 18px;
+    flex: 1;
+  }
+}

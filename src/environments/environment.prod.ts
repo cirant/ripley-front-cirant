@@ -8,5 +8,5 @@ export const environment = {
     storageBucket: "",
     messagingSenderId: "695722615474",
   },
-  urlApi: 'https://ripley-api-cirant.herokuapp.com'
+  urlApi: 'https://ripley-api-cirant.herokuapp.com/api/v1'
 };

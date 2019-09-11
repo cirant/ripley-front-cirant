@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { auth } from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,17 @@ export class AuthService {
     return await this.fbAuth.auth.currentUser.getIdToken(true);
   }
 
+  async loginGoogle(){
+    try {
+      await this.fbAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+      this.token = await this.fbAuth.auth.currentUser.getIdToken(true);
+      sessionStorage.setItem('token', this.token);
+      return true;
+    } catch (error) {
+      console.log('error loginGoogle ', error);
+    }
+  }
+
   async logout() {
     await this.fbAuth.auth.signOut();
     this.token = null;
@@ -40,7 +52,7 @@ export class AuthService {
   }
 
   isLogged():boolean {
-    return Boolean(this.token);
+    return Boolean(this.fbAuth.auth.currentUser);
   }
 
 }
